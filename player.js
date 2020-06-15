@@ -1,6 +1,10 @@
   
 class Player { 
-        constructor() {}
+        constructor(playerImage,x,y) {
+            this.image=playerImage
+            this.y=y;
+            this.x=x
+        }
           
        
     
@@ -17,12 +21,13 @@ class Player {
             this.x += 10;
              
         }
-    
+
           setup() {
             
           } 
 
          draw() { 
+             image(this.image,this.x,this.y)
             
         } 
 }

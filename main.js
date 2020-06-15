@@ -2,20 +2,17 @@ console.log("hello world ");
 const game = new Game();
 // these three function are p5 created and they are being called from p5 library! :)
 
-
+function preload(){
+    game.preload()
+}
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    game.setup()
     
-    landscape = loadImage('assets/green-field.jpg');   
-    playerImg = loadImage("assets/putin.png");
-    playerKickLeftImg = loadImage("assets/putin-kick-left.png");
-    playerKickRightImg = loadImage("assets/putin-kick-right.png"); 
   } 
   
   function draw() { 
-      image(landscape, 0, 0); 
-      
-      image(playerImg, 100, 100, 137, 235);
+game.drawGame()
   } 
    
   
@@ -23,18 +20,18 @@ function keyPressed() {
   if (keyCode == 32) { 
     game.player1.kick();
   }
-  if (keyCode == 87) { 
+  if (keyIsDown == 87) { 
     game.player1.moveUp();
   }
-  if (keyCode == 68) {
+  if (keyIsDown == 68) {
     game.player1.moveRight();
   }
 
-  if (keyCode == 65) {
+  if (keyIsDown == 65) {
     game.player1.moveLeft();
   }
 
-  if (keyCode == 83) {
+  if (keyIsDown == 83) {
     game.player1.moveDown();
   }
 
@@ -42,19 +39,19 @@ function keyPressed() {
     game.player2.kick();
   }
 
-  if (keyCode == 37) {
+  if (keyIsDown == 37) {
     game.player2.moveLeft();
   }
 
-  if (keyCode == 38) {
+  if (keyIsDown == 38) {
     game.player2.moveUp();
   }
 
-  if (keyCode == 39) {
+  if (keyIsDown == 39) {
     game.player2.moveRight();
   }
 
-  if (keyCode == 40) {
+  if (keyIsDown == 40) {
     game.player2.moveDown();
   }
 
