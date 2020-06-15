@@ -6,7 +6,9 @@ class Player {
             this.x=x
         }
           
-       
+       kick(){
+          this.image = playerKickRightImg;
+       }
     
         moveUp(){
             this.y -= 10;
