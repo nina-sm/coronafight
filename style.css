@@ -1,0 +1,19 @@
+h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+}
+
+p {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.instructions {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.health{
+    display:flex;
+    justify-content: space-evenly;
+}

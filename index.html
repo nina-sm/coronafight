@@ -6,14 +6,43 @@
     <title>Fight Game</title>
     
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+
+    <div class="instructions">
+        <div id="player1">
+        <h2>Player 1</h2>
+        <p>W = Move Up</p>
+        <p>S = Move Down</p>
+        <p>D = Move Right</p>
+        <p>A = Move Left</p>
+        <p>G = Fight Right</p>
+        <p>F = Fight Left</p>
+     </div>
+
+         <div id="player2">
+            <h2>Player 2</h2>
+            <p>↑ = Move Up</p>
+            <p>↓ = Move Down</p>
+            <p>→ = Move Right</p>
+            <p>→ = Move Left</p>
+            <p>L = Fight Right</p>
+            <p>K = Fight Left</p>
+             </div>
+    </div>
+
+    <div class="health" >
+        <h2 id="health1"> HEALTH = </h2>
+        <h2 id="health2"> HEALTH = </h2>    
+    </div>
 
     <script src="background.js"></script>
     <script src="player.js"></script> 
     <script src="game.js"></script>
-
     <script src="main.js"></script>
 </body>
 </html>

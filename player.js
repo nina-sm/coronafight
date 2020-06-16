@@ -1,13 +1,15 @@
   
 class Player { 
-        constructor(playerImage,x,y) {
+        constructor(playerImage,x,y,r,isKicking,health) {
             this.image=playerImage
-            this.y=y;
+            this.y=y
             this.x=x
+            this.r=r
             this.isKicking = false
+            this.health = 100 
         }
           
-    
+
     
         moveUp(){
             this.y -= 10;

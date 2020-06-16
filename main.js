@@ -1,18 +1,25 @@
 console.log("hello world ");
-const game = new Game();
-// these three function are p5 created and they are being called from p5 library! :)
+const game = new Game(); 
 
 function preload(){
     game.preload()
 }
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+  //to ADD: borders on the canvas 
+  createCanvas(windowWidth, windowHeight);
+
+
+   // createCanvas(2368, 1000);  // this is background image sizes
     game.setup()
     
   } 
   
+
   function draw() { 
 game.drawGame() 
+
+//************************************************* Players moving around 
+
     if (keyIsDown(87)) { 
         
       game.player1.moveUp();
@@ -28,8 +35,6 @@ game.drawGame()
     else  if (keyIsDown(83)) {
       game.player1.moveDown();
     }
-  
-    
   
     else  if (keyIsDown(37)) {
       game.player2.moveLeft();
@@ -49,31 +54,80 @@ game.drawGame()
  
   }
 
+  // ************************************************* Players kicking 
+
+  // ADD: kicking has to last only for 0.1 second and return back to the default player image 
+
   function keyPressed(){
     
      if (keyCode === 71) { 
        
       game.player1.image = game.player1KickRightImg;
-      game.player1.isKicking = true
+      game.player1.isKicking = true;
+    
      }
 
      if (keyCode === 70) { 
       
       game.player1.image = game.player1KickLeftImg;
-      game.player1.isKicking = true
+      game.player1.isKicking = true;
      }
 
      else  if (keyCode === 76) {
       game.player2.image = game.player2KickRightImg;
       game.player2.isKicking = true;
+     
     }
 
     else  if (keyCode === 75) {
       game.player2.image = game.player2KickLeftImg;
       game.player2.isKicking = true;
+       
     }
 
 
   }
 
-  //if (player1.x === player2.x && player1.y === player2.y)
+
+// ************************************************* Receive Damage
+
+console.log(game.player.health); // ERROR: can read property .health of player but can't of player1 or player2
+console.log(game.player.isKicking);
+
+function receiveDamage(health) {
+  game.player.health -= 5;
+  console.log('ouch')
+}
+ 
+
+  if (game.player1.isKicking === true && game.player1.intersects(game.player2)) {  // ERROR: player1 is undefined
+    game.player2.receiveDamage();
+  }
+
+  if (game.player2.isKicking === true && game.player1.intersects(game.player2)) { // ERROR: player1 is undefined
+    game.player1.receiveDamage();
+  }
+
+  //************************************************* Players should not intersect 
+ 
+  // if (player1.x === player2.x && player1.y === player2.y) {
+
+  // }
+
+  // let distance = dist(player1.x,player1.y,player2.x,player2.y);
+  // if (distance < 0) { 
+
+  // }
+
+  
+// ************************************************* Display Health 
+
+
+// document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`; // ERROR: player1 is undefined
+ 
+// document.getElementById("health2").innerHTML = `Health: ${game.player2.health}`; // ERROR: player2 is undefined
+
+
+
+//****************************************************** EXTRA  
+//clicked(){} - change the player image by clicking on player??? 
