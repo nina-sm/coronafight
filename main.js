@@ -51,13 +51,29 @@ game.drawGame()
 
   function keyPressed(){
     
-     if (keyCode === 32) { 
+     if (keyCode === 71) { 
+       
+      game.player1.image = game.player1KickRightImg;
+      game.player1.isKicking = true
+     }
+
+     if (keyCode === 70) { 
       
-      game.player1.kick1();
+      game.player1.image = game.player1KickLeftImg;
+      game.player1.isKicking = true
      }
 
      else  if (keyCode === 76) {
-      game.player2.kick2();
+      game.player2.image = game.player2KickRightImg;
+      game.player2.isKicking = true;
     }
 
+    else  if (keyCode === 75) {
+      game.player2.image = game.player2KickLeftImg;
+      game.player2.isKicking = true;
+    }
+
+
   }
+
+  //if (player1.x === player2.x && player1.y === player2.y)

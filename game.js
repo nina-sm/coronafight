@@ -29,16 +29,7 @@ class Game {
         this.x += 1;
          
     }
-
-       kick1(){
-          this.player1.image = player1KickRightImg;
-          this.player1.isKicking = true
-       }
-
-       kick2(){
-        this.player2.image = player2KickRightImg;
-        this.player2.isKicking = true
-     }
+ 
 
     setup(){
         this.background = new Background();
