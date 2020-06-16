@@ -4,11 +4,10 @@ class Player {
             this.image=playerImage
             this.y=y;
             this.x=x
+            this.isKicking = false
         }
           
-       kick(){
-          this.image = playerKickRightImg;
-       }
+    
     
         moveUp(){
             this.y -= 10;
