@@ -15,56 +15,27 @@ class Game {
     this.player2KickRightImg = loadImage("assets/corona-kick-right.png");
     }
     
-    moveUp(){
-       // if(distance > 100) {
-        this.y -= 1;
-    }
-    moveDown(){
-      // if(distance > 100) {
-        this.y += 1;
-    }
-    moveLeft(){
-       // if(distance > 100) {
-        this.x -= 1;
-    }
-    moveRight(){
-       // if(distance > 100) {
-        this.x += 1;
-         
-    }
+  
  punches(){
     if (keyIsDown(71)) { 
        
         game.player1.image = game.player1KickRightImg;
         game.player1.isKickingRight = true;
       
-       }
-   /*  else {
-            game.player1.image = game.player1Img;
-         game.player1.isKickingRight = false;
-        } */
-  
+       } 
+
       else if  (keyIsDown(70)) { 
         
         game.player1.image = game.player1KickLeftImg;
         game.player1.isKickingLeft = true;
        }
-
-    /*     else {
-     game.player1.image = game.player1Img;
-         game.player1.isKickingLeft = false;
-     } */
+ 
   
      else if  (keyIsDown(76)) {
         game.player2.image = game.player2KickRightImg;
         game.player2.isKickingRight = true;
        
-      }
-
-    //   else{
-    //     game.player2.image = game.player2Img;
-    //     game.player2.isKickingRight = false;
-    // }
+      } 
   
       else if  (keyIsDown(75)) {
         game.player2.image = game.player2KickLeftImg;
@@ -84,6 +55,41 @@ class Game {
   
  }
 
+  move1() {
+ if (keyIsDown(87)) { 
+  this.player1.moveUp();
+}
+
+else  if (keyIsDown(68)) {
+this.player1.moveRight();
+}
+
+else if (keyIsDown(65)) {
+  this.player1.moveLeft();
+}
+
+else  if (keyIsDown(83)) {
+  this.player1.moveDown();
+}
+  }
+move2() {
+  if (keyIsDown(37)) {
+  this.player2.moveLeft();
+}
+
+else if (keyIsDown(38)) {
+  this.player2.moveUp();
+}
+
+else if (keyIsDown(39)) {
+  this.player2.moveRight();
+}
+
+else  if (keyIsDown(40)) {
+  this.player2.moveDown();
+}
+}
+
     setup(){
         this.background = new Background();
 
@@ -94,7 +100,9 @@ class Game {
         this.background.draw()
         this.player1.draw()
         this.player2.draw()
-this.punches()
+        this.punches()
+        this.move1()
+        this.move2()
 
 
   let distance = dist(this.player1.x,this.player1.y,this.player2.x,this.player2.y); 

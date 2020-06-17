@@ -6,37 +6,35 @@ class Player {
             this.x=x
             this.r=r
             this.isKicking = false
-            this.health = 1000 
+            this.health = 500 
         }
            
-    
-    
-        moveUp(){
-           // if(game.distanceY > 100) {
+        moveUp(){ 
+            if(this.y > 0)
             this.y -= 10;
         }
-        moveDown(){
-           // if(game.distanceY > 100) {
+        moveDown(){ 
+            if(this.y < 350)
             this.y += 10;
         }
-        moveLeft(){
-          //  if(game.distanceX > 100) {
+        moveLeft(){ 
+            if (this.x > -5)
             this.x -= 10;
         }
-        moveRight(){
-          //  if(game.distanceX > 100) {
+        moveRight(){ 
+            if (this.x < 810)
             this.x += 10;
              
         }
 receiveDamage(damage){
-   
-    console.log("punches are happening")
+ 
     if (this.health > 0)  {
-         this.health -= damage
-         return `Player has received 10 points of damage`
+         this.health -= damage 
         }
-         else return `Player has died in combat`;
-    
+         else {
+             console.log(`Player has died in combat`);
+             
+        } 
 }
           setup() {
             
