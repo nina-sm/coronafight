@@ -20,8 +20,8 @@ game.drawGame()
 
 // ************************************************* Display Health 
 
-document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`; // ERROR: player1 is undefined
-  document.getElementById("health2").innerHTML = `Health: ${game.player2.health}`; // ERROR: player2 is undefined
+document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`;  
+  document.getElementById("health2").innerHTML = `Health: ${game.player2.health}`;  
 
 //************************************************* Players moving around 
 
@@ -62,56 +62,28 @@ document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`;
   // ************************************************* Players kicking 
 
   // ADD: kicking has to last only for 0.1 second and return back to the default player image 
+  
 
   function keyPressed(){
+    console.log(keyCode)
     
-     if (keyCode === 71) { 
-       
-      game.player1.image = game.player1KickRightImg;
-      game.player1.isKicking = true;
-    
-     }
-
-     if (keyCode === 70) { 
-      
-      game.player1.image = game.player1KickLeftImg;
-      game.player1.isKicking = true;
-     }
-
-     else  if (keyCode === 76) {
-      game.player2.image = game.player2KickRightImg;
-      game.player2.isKicking = true;
-     
-    }
-
-    else  if (keyCode === 75) {
-      game.player2.image = game.player2KickLeftImg;
-      game.player2.isKicking = true;
-       
-    }
-
 
   }
 
 
 // ************************************************* Receive Damage
 
-console.log(game.player.health); // ERROR: can read property .health of player but can't of player1 or player2
+console.log(game.player.health); 
 console.log(game.player.isKicking);
-
-function receiveDamage(health) {
  
- 
-}
- 
-
-  if (game.player1.isKicking === true && game.player1.intersects(game.player2)) {  // ERROR: player1 is undefined
+/*
+  if (game.player1.isKickingLeft === true && game.player1.intersects(game.player2)) {  
     game.player2.receiveDamage();
   }
 
-  if (game.player2.isKicking === true && game.player1.intersects(game.player2)) { // ERROR: player1 is undefined
+  if (game.player2.isKicking === true && game.player1.intersects(game.player2)) { 
     game.player1.receiveDamage();
-  }
+  } */
 
   //************************************************* Players should not intersect 
  
@@ -121,6 +93,4 @@ function receiveDamage(health) {
   
  
 
-
-//****************************************************** EXTRA  
-//clicked(){} - change the player image by clicking on player??? 
+ 

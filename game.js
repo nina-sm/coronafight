@@ -16,19 +16,73 @@ class Game {
     }
     
     moveUp(){
+       // if(distance > 100) {
         this.y -= 1;
     }
     moveDown(){
+      // if(distance > 100) {
         this.y += 1;
     }
     moveLeft(){
+       // if(distance > 100) {
         this.x -= 1;
     }
     moveRight(){
+       // if(distance > 100) {
         this.x += 1;
          
     }
- 
+ punches(){
+    if (keyIsDown(71)) { 
+       
+        game.player1.image = game.player1KickRightImg;
+        game.player1.isKickingRight = true;
+      
+       }
+   /*  else {
+            game.player1.image = game.player1Img;
+         game.player1.isKickingRight = false;
+        } */
+  
+      else if  (keyIsDown(70)) { 
+        
+        game.player1.image = game.player1KickLeftImg;
+        game.player1.isKickingLeft = true;
+       }
+
+    /*     else {
+     game.player1.image = game.player1Img;
+         game.player1.isKickingLeft = false;
+     } */
+  
+     else if  (keyIsDown(76)) {
+        game.player2.image = game.player2KickRightImg;
+        game.player2.isKickingRight = true;
+       
+      }
+
+    //   else{
+    //     game.player2.image = game.player2Img;
+    //     game.player2.isKickingRight = false;
+    // }
+  
+      else if  (keyIsDown(75)) {
+        game.player2.image = game.player2KickLeftImg;
+        game.player2.isKickingLeft = true;
+         
+      }
+
+     else{
+         game.player2.image = game.player2Img;
+          game.player2.isKickingLeft = false;
+            game.player2.isKickingRight = false;
+            game.player1.image = game.player1Img;
+            game.player1.isKickingLeft = false;
+            game.player1.isKickingRight = false;
+
+     }
+  
+ }
 
     setup(){
         this.background = new Background();
@@ -40,33 +94,62 @@ class Game {
         this.background.draw()
         this.player1.draw()
         this.player2.draw()
+this.punches()
 
 
-
-  let distance = dist(this.player1.x,this.player1.y,this.player2.x,this.player2.y);
+  let distance = dist(this.player1.x,this.player1.y,this.player2.x,this.player2.y); 
   console.log(distance);
-  if (distance < 90) { 
+  if (distance < 100) { 
 
     //for each case - on the right and left side kicking left and right player 1 and 2 
-      if (this.player1.x>this.player2.x){
-         if(this.player1.isKickingLeft==true){
-                this.player2.receiveDamage(0)
-          }
-          this.player2.isKickingRight
-      }
-    if (this.player1.isKicking === true) {  // ERROR: player1 is undefined
-        this.player2.receiveDamage(0);
-      }
-    
-      if (this.player2.isKicking === true) { // ERROR: player1 is undefined
-        this.player1.receiveDamage(0);
-      }
+
+    // Kicking for default postition Player 1 - - - - Player 2 
+
+    if (this.player1.x<this.player2.x){
+        if(this.player1.isKickingLeft==true){
+               this.player2.receiveDamage(0);
+            
+         }
+         if(this.player1.isKickingRight==true){
+           this.player2.receiveDamage(1);
+           
+     }
+         if(this.player2.isKickingRight==true){
+           this.player1.receiveDamage(0);
+            
+         }
+         if(this.player2.isKickingLeft==true){
+           this.player1.receiveDamage(1);
+          
+         }
+     
   }
 
+    // Kicking for switched postition Player 2 - - - - Player 1
+     
+    if (this.player1.x>this.player2.x){
+         if(this.player1.isKickingLeft==true){
+                this.player2.receiveDamage(1);
+               
+          }
+          if(this.player1.isKickingRight==true){
+            this.player2.receiveDamage(0);
+            
+      }
+          if(this.player2.isKickingRight==true){
+            this.player1.receiveDamage(1);
+            
+          }
+          if(this.player2.isKickingLeft==true){
+            this.player1.receiveDamage(0);
+           
+          }
+      }
+     
  
     }
 
 
-   
+}
 
 }
