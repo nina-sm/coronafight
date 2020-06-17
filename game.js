@@ -2,7 +2,6 @@ class Game {
     constructor() {
         this.x = 0;
         this.y = 0;
-      this.player = new Player(); 
     }  
       
     
@@ -41,9 +40,33 @@ class Game {
         this.background.draw()
         this.player1.draw()
         this.player2.draw()
+
+
+
+  let distance = dist(this.player1.x,this.player1.y,this.player2.x,this.player2.y);
+  console.log(distance);
+  if (distance < 90) { 
+
+    //for each case - on the right and left side kicking left and right player 1 and 2 
+      if (this.player1.x>this.player2.x){
+         if(this.player1.isKickingLeft==true){
+                this.player2.receiveDamage(0)
+          }
+          this.player2.isKickingRight
+      }
+    if (this.player1.isKicking === true) {  // ERROR: player1 is undefined
+        this.player2.receiveDamage(0);
+      }
+    
+      if (this.player2.isKicking === true) { // ERROR: player1 is undefined
+        this.player1.receiveDamage(0);
+      }
+  }
+
+ 
     }
 
-    
-  
+
+   
 
 }

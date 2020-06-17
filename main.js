@@ -18,6 +18,11 @@ function setup() {
   function draw() { 
 game.drawGame() 
 
+// ************************************************* Display Health 
+
+document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`; // ERROR: player1 is undefined
+  document.getElementById("health2").innerHTML = `Health: ${game.player2.health}`; // ERROR: player2 is undefined
+
 //************************************************* Players moving around 
 
     if (keyIsDown(87)) { 
@@ -95,8 +100,8 @@ console.log(game.player.health); // ERROR: can read property .health of player b
 console.log(game.player.isKicking);
 
 function receiveDamage(health) {
-  game.player.health -= 5;
-  console.log('ouch')
+ 
+ 
 }
  
 
@@ -110,23 +115,11 @@ function receiveDamage(health) {
 
   //************************************************* Players should not intersect 
  
-  // if (player1.x === player2.x && player1.y === player2.y) {
-
-  // }
-
-  // let distance = dist(player1.x,player1.y,player2.x,player2.y);
-  // if (distance < 0) { 
-
-  // }
-
+  // left side and right side collision. if this is happening then you are not able to move. check every time he moves if there is a collision 
+    
   
-// ************************************************* Display Health 
-
-
-// document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`; // ERROR: player1 is undefined
+  
  
-// document.getElementById("health2").innerHTML = `Health: ${game.player2.health}`; // ERROR: player2 is undefined
-
 
 
 //****************************************************** EXTRA  

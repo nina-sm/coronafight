@@ -24,7 +24,12 @@ class Player {
             this.x += 10;
              
         }
-
+receiveDamage(damage){
+    this.health -= damage;
+    console.log("punches are happening")
+    if (this.health > 0) return `Player has received 10 points of damage`; else return `Player has died in combat`;
+    console.log('ouch')
+}
           setup() {
             
           } 
