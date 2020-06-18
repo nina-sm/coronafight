@@ -13,7 +13,7 @@ class Game {
     this.player2Img=loadImage("assets/coronavirus.png");
     this.player2KickLeftImg = loadImage("assets/corona-kick-left.png");
     this.player2KickRightImg = loadImage("assets/corona-kick-right.png");
-   // this.gameOverImg = loadImage("assets/game-over.png");
+    this.gameOverImg = loadImage("assets/game-over1.png");
     }
     
   
@@ -22,6 +22,8 @@ class Game {
        
         game.player1.image = game.player1KickRightImg;
         game.player1.isKickingRight = true;
+        player1Punch.play();
+
       
        } 
 
@@ -33,18 +35,21 @@ class Game {
         
         game.player1.image = game.player1KickLeftImg;
         game.player1.isKickingLeft = true;
+        player1Punch.play();
        }
  
   
      else if  (keyIsDown(76)) {
         game.player2.image = game.player2KickRightImg;
         game.player2.isKickingRight = true;
+        player2Punch.play();
        
       } 
   
       else if  (keyIsDown(75)) {
         game.player2.image = game.player2KickLeftImg;
         game.player2.isKickingLeft = true;
+        player2Punch.play();
          
       }
 
@@ -59,6 +64,9 @@ class Game {
      }
   
  }
+
+ 
+// MOving 
 
   move1() {
  if (keyIsDown(87)) { 
@@ -95,6 +103,27 @@ else  if (keyIsDown(40)) {
 }
 }
 
+//Dying
+ 
+// else if statements do not work - player1.health is not defined
+
+// die() {
+
+//    if (this.player1.health == 0) {
+//     console.log("Corona has conquered your country")
+//     gameOver = true;    
+//   }
+  
+//   else if (this.player2.health == 0) {
+//     console.log("You have conquered corona! Your country is now healthy and safe!")
+//     gameOver = true;    
+//   }
+  
+ 
+// } 
+
+
+
     setup(){
         this.background = new Background();
 
@@ -120,11 +149,12 @@ else  if (keyIsDown(40)) {
 
     if (this.player1.x<this.player2.x){
         if(this.player1.isKickingLeft==true){
-               this.player2.receiveDamage(0);
+               this.player2.receiveDamage(0); 
             
          }
          if(this.player1.isKickingRight==true){
            this.player2.receiveDamage(1);
+           player2Hurt.play();
            
      }
          if(this.player2.isKickingRight==true){
@@ -133,7 +163,7 @@ else  if (keyIsDown(40)) {
          }
          if(this.player2.isKickingLeft==true){
            this.player1.receiveDamage(1);
-          
+           player1Hurt.play();
          }
      
   }
@@ -143,7 +173,7 @@ else  if (keyIsDown(40)) {
     if (this.player1.x>this.player2.x){
          if(this.player1.isKickingLeft==true){
                 this.player2.receiveDamage(1);
-               
+                player2Hurt.play();
           }
           if(this.player1.isKickingRight==true){
             this.player2.receiveDamage(0);
@@ -151,7 +181,7 @@ else  if (keyIsDown(40)) {
       }
           if(this.player2.isKickingRight==true){
             this.player1.receiveDamage(1);
-            
+            player1Hurt.play();
           }
           if(this.player2.isKickingLeft==true){
             this.player1.receiveDamage(0);

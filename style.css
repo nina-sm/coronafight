@@ -28,9 +28,19 @@ html {
     
 }
   
+#restart { 
 
-/* #gameOver {
-    margin-top: -50px;
-    text-align: center;
+     display: flex;
+     justify-content: center;
+     margin-top: -50px;
+ }
 
-} */
+ #restart > button { 
+     background-color: black;
+     font-family: 'Bangers', cursive;
+     font-size: 50px;
+     color:white;
+     width: 200px;
+     height: 70px;
+     border-color:#56b9c8;
+ }

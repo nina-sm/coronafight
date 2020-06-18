@@ -6,7 +6,7 @@ class Player {
             this.x=x
             this.r=r
             this.isKicking = false
-            this.health = 300 
+            this.health = 100 
         }
            
         moveUp(){ 
@@ -31,11 +31,14 @@ receiveDamage(damage){
     if (this.health > 0)  {
          this.health -= damage 
         }
-         else {
-             console.log(`Player has died in combat`);
-             
-        } 
+
+      else  {
+  console.log(`Player has died in combat`);
+  gameOver = true;     
 }
+
+}
+
           setup() {
             
           } 
