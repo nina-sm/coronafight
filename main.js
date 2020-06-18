@@ -1,17 +1,24 @@
 console.log("hello world ");
+let player1Hurt, player2Hurt;
 const game = new Game(); 
 
 function preload(){
     game.preload()
 }
 function setup() {
-  //to ADD: borders on the canvas 
+
+  //let player1Hurt = loadSound('assets/putin-hurt.mp3');
+  //let player2Hurt = loadSound('assets/corona-hurt.mp3');
+  //let player1Punch = loadSound('assets/punch.mp3');
+  //let player2Punch = loadSound('assets/corona-punch.mp3');
+  //let player1Wins = loadSound('assets/putin-wins.mp3');
+  //let player2Wins = loadSound('assets/corona-wins.mp3');
+  
   let canvas = createCanvas(windowWidth, windowHeight);
 
-  canvas.position(350,600)
+  canvas.position(350,650)
 
-   // createCanvas(2368, 1000);  // this is background image sizes
-    game.setup()
+   game.setup()
     
   } 
   

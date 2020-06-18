@@ -13,6 +13,7 @@ class Game {
     this.player2Img=loadImage("assets/coronavirus.png");
     this.player2KickLeftImg = loadImage("assets/corona-kick-left.png");
     this.player2KickRightImg = loadImage("assets/corona-kick-right.png");
+   // this.gameOverImg = loadImage("assets/game-over.png");
     }
     
   
@@ -23,6 +24,10 @@ class Game {
         game.player1.isKickingRight = true;
       
        } 
+
+      //  if (keyIsDown(13)) {
+      //    this.player1Hurt.play();
+      //  }
 
       else if  (keyIsDown(70)) { 
         

@@ -6,7 +6,7 @@ class Player {
             this.x=x
             this.r=r
             this.isKicking = false
-            this.health = 500 
+            this.health = 300 
         }
            
         moveUp(){ 
