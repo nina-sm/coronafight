@@ -7,23 +7,40 @@ class Player {
             this.r=r
             this.isKicking = false
             this.health = 100 
+            this.d=500
         }
            
         moveUp(){ 
-            if(this.y > 0)
-            this.y -= 10;
+            if(this.y > 0  ){
+                
+                this.y -= 10;
+                console.log(this.d)
+                if(this.d<150){
+                    this.y+=20
+                }
+            }
+           
         }
         moveDown(){ 
             if(this.y < 350)
             this.y += 10;
+            if(this.d<150){
+                this.y-=20
+            }
         }
         moveLeft(){ 
-            if (this.x > -5)
+            if (this.x > -5 )
             this.x -= 10;
+            if(this.d<100){
+                this.x+=20
+            }
         }
         moveRight(){ 
-            if (this.x < 810)
+            if (this.x < 810 )
             this.x += 10;
+            if(this.d<100){
+                this.x-=20
+            }
              
         }
 receiveDamage(damage){
@@ -32,8 +49,7 @@ receiveDamage(damage){
          this.health -= damage 
         }
 
-      else  {
-  console.log(`Player has died in combat`);
+      else  { 
   gameOver = true;     
 }
 
@@ -45,6 +61,15 @@ receiveDamage(damage){
 
          draw() { 
              image(this.image,this.x,this.y)
+            // fill("red")
+            // circle(this.x+this.image.width/2,this.y+this.image.height/2,10)
             
         } 
+
+        
+  checkCollision(object) {
+      this.d=dist(object.x+object.image.width/2,object.y+object.image.height/2,this.x+this.image.width/2,this.y + this.image.height/2)
+      
+    console.log(this.d)
+  }
 }

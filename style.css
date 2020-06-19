@@ -4,8 +4,10 @@ h2 {
 }
 h1 {
     font-family: 'Bangers', cursive;
-    font-size: 80px;
+    font-size: 100px;
     text-align: center;
+    color:#63dcee;
+     -webkit-text-stroke: 0.001px black; 
 }
 
 p {
