@@ -138,7 +138,7 @@ else  if (keyIsDown(40)) {
 
   let distance = dist(this.player1.x+this.player1.image.width/2,this.player1.y+this.player1.image.height/2,this.player2.x+this.player2.image.width/2, this.player2.y + this.player2.image.height/2); 
   
-  if (distance < 180) { 
+  if (distance < 190) { 
 
     //for each case - on the right and left side kicking left and right player 1 and 2 
 
