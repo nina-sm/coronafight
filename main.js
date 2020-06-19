@@ -79,3 +79,20 @@ document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`;
    game.player2.x = 700;
    document.getElementById("restart").style.display = "none";
  }
+
+ /* 
+
+ THINGS TO FIX: 
+
+- collisions 
+- game over repeating sound 
+- HTML positioning 
+- recurring punches 
+
+THINGS TO ADD: 
+
+- jumping
+- more players
+- AI 
+
+ */

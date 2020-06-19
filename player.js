@@ -24,21 +24,21 @@ class Player {
         moveDown(){ 
             if(this.y < 350)
             this.y += 10;
-            if(this.d<150){
+            if(this.d<170){
                 this.y-=20
             }
         }
         moveLeft(){ 
             if (this.x > -5 )
             this.x -= 10;
-            if(this.d<100){
+            if(this.d<170){
                 this.x+=20
             }
         }
         moveRight(){ 
             if (this.x < 810 )
             this.x += 10;
-            if(this.d<100){
+            if(this.d<170){
                 this.x-=20
             }
              
@@ -68,7 +68,7 @@ receiveDamage(damage){
 
         
   checkCollision(object) {
-      this.d=dist(object.x+object.image.width/2,object.y+object.image.height/2,this.x+this.image.width/2,this.y + this.image.height/2)
+      this.d=dist(object.x+object.image.width/2,object.y+object.image.height/2, this.x+this.image.width/2,this.y + this.image.height/2)
       
     console.log(this.d)
   }

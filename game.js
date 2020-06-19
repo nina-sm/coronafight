@@ -116,26 +116,7 @@ else  if (keyIsDown(40)) {
   this.player2.moveDown();
 }
 }
-
-//Dying
  
-// else if statements do not work - player1.health is not defined
-
-// die() {
-
-//    if (this.player1.health == 0) {
-//     console.log("Corona has conquered your country")
-//     gameOver = true;    
-//   }
-  
-//   else if (this.player2.health == 0) {
-//     console.log("You have conquered corona! Your country is now healthy and safe!")
-//     gameOver = true;    
-//   }
-  
- 
-// } 
-
 
 
     setup(){
@@ -155,13 +136,11 @@ else  if (keyIsDown(40)) {
         this.player1.checkCollision(this.player2);
         this.player2.checkCollision(this.player1)
 
-  let distance = dist(this.player1.x,this.player1.y,this.player2.x,this.player2.y); 
+  let distance = dist(this.player1.x+this.player1.image.width/2,this.player1.y+this.player1.image.height/2,this.player2.x+this.player2.image.width/2, this.player2.y + this.player2.image.height/2); 
   
-  if (distance < 100) { 
+  if (distance < 180) { 
 
     //for each case - on the right and left side kicking left and right player 1 and 2 
-
-
 
     // Kicking for default postition Player 1 - - - - Player 2 
 
@@ -200,7 +179,7 @@ else  if (keyIsDown(40)) {
    }
        if(this.player2.isKickingRight==true){
          this.player1.receiveDamage(1);
-         if (!player1Hurt.isPlaying()) player2Hurt.play();
+         if (!player1Hurt.isPlaying()) player1Hurt.play();
        }
        if(this.player2.isKickingLeft==true){
          this.player1.receiveDamage(0);
