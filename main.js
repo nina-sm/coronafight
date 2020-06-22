@@ -52,13 +52,6 @@ game.drawGame()
   }
  
  
-// let gameOverMusic = true;
-//   if(gameOverMusic === true && !gameOverSound.isPlaying()) {
-//     gameOverMusic = false;
-//    gameOverSound.loop = false;
-//     gameOverSound.play();   
-//   } 
-
   
 }
 
@@ -80,19 +73,4 @@ document.getElementById("health1").innerHTML = `Health: ${game.player1.health}`;
    document.getElementById("restart").style.display = "none";
  }
 
- /* 
-
- THINGS TO FIX: 
-
-- collisions 
-- game over repeating sound 
-- HTML positioning 
-- recurring punches 
-
-THINGS TO ADD: 
-
-- jumping
-- more players
-- AI 
-
- */
+  

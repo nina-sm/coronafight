@@ -133,8 +133,8 @@ else  if (keyIsDown(40)) {
         this.move1()
         this.move2()
 
-        this.player1.checkCollision(this.player2);
-        this.player2.checkCollision(this.player1)
+      //  this.player1.checkCollision(this.player2);
+      //  this.player2.checkCollision(this.player1)
 
   let distance = dist(this.player1.x+this.player1.image.width/2,this.player1.y+this.player1.image.height/2,this.player2.x+this.player2.image.width/2, this.player2.y + this.player2.image.height/2); 
   

@@ -15,32 +15,32 @@ class Player {
                 
                 this.y -= 10;
                 console.log(this.d)
-                if(this.d<150){
-                    this.y+=20
-                }
+                // if(this.d<150){
+                //     this.y+=20
+                // }
             }
            
         }
         moveDown(){ 
             if(this.y < 350)
             this.y += 10;
-            if(this.d<170){
-                this.y-=20
-            }
+            // if(this.d<170){
+            //     this.y-=20
+            // }
         }
         moveLeft(){ 
             if (this.x > -5 )
             this.x -= 10;
-            if(this.d<170){
-                this.x+=20
-            }
+            // if(this.d<170){
+            //     this.x+=20
+            // }
         }
         moveRight(){ 
             if (this.x < 810 )
             this.x += 10;
-            if(this.d<170){
-                this.x-=20
-            }
+            // if(this.d<170){
+            //     this.x-=20
+            // }
              
         }
 receiveDamage(damage){
