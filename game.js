@@ -7,9 +7,9 @@ class Game {
     
     preload(){
     this.landscape = loadImage('assets/city.png');   
-    this.player1Img = loadImage("assets/putin.png");
-    this.player1KickLeftImg = loadImage("assets/putin-kick-left.png");
-    this.player1KickRightImg = loadImage("assets/putin-kick-right.png"); 
+    this.player1Img = loadImage("assets/Putin.png");
+    this.player1KickLeftImg = loadImage("assets/PutinHitL.png");
+    this.player1KickRightImg = loadImage("assets/PutinHitR.png"); 
     this.player1Defated = loadImage("assets/putin-defeated2.png");
     this.player2Img=loadImage("assets/coronavirus.png");
     this.player2KickLeftImg = loadImage("assets/corona-kick-left.png");

@@ -6,7 +6,7 @@ h1 {
     font-family: 'Bangers', cursive;
     font-size: 100px;
     text-align: center;
-    color:#63dcee;
+    color:black;
      -webkit-text-stroke: 0.001px black; 
 }
 
@@ -45,4 +45,9 @@ html {
      width: 200px;
      height: 70px;
      border-color:#56b9c8;
+ }
+
+ .other-dictators { 
+     margin-top: 35%;
+     margin-left: 40%;
  }
